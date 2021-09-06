@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a31d64e548856847969de3e9a7b960b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wolf: {fileID: 2221862638446431060, guid: 144017892dd18e342966dfac3b45f6aa, type: 3}
-  _pointsSpawn: {fileID: 1739090568}
+  _template: {fileID: 2221862638446431060, guid: 144017892dd18e342966dfac3b45f6aa, type: 3}
+  _spawnPoints: {fileID: 1739090568}
   _timeout: 2
 --- !u!20 &519420031
 Camera:
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739090568}
   m_Layer: 0
-  m_Name: PointsSpawn
+  m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

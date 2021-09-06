@@ -3,24 +3,24 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject _wolf;
-    [SerializeField] private Transform _pointsSpawn;
+    [SerializeField] private GameObject _template;
+    [SerializeField] private Transform _spawnPoints;
     [SerializeField] private float _timeout;
 
     private void Start()
     {
-        StartCoroutine(SetEnemy());
+        StartCoroutine(SetEnemies());
     }
 
-    private IEnumerator SetEnemy()
+    private IEnumerator SetEnemies()
     {
-        var waitForOneSeconds = new WaitForSeconds(_timeout);
+        var waitForSeconds = new WaitForSeconds(_timeout);
 
-        for (int i = 0; i < _pointsSpawn.childCount; i++)
+        for (int i = 0; i < _spawnPoints.childCount; i++)
         {
-            Instantiate(_wolf, _pointsSpawn.GetChild(i).position, Quaternion.identity);
+            Instantiate(_template, _spawnPoints.GetChild(i).position, Quaternion.identity);
 
-            yield return waitForOneSeconds;
+            yield return waitForSeconds;
         }
     }
 }
